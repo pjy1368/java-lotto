@@ -10,18 +10,25 @@ import lotto.domain.rating.RatingInfo;
 
 public class Lotteries {
 
-    private final List<Lotto> lottos = new ArrayList<>();
+    private final List<Lotto> lottos;
+
+    public Lotteries() {
+        lottos = new ArrayList<>();
+    }
 
     public Lotteries(final List<Lotto> lottos) {
+        this();
         addLottoByManual(lottos);
     }
 
     public Lotteries(final LottoMachine lottoMachine, final int ticketCount) {
+        this();
         addLottoByTicket(lottoMachine, ticketCount);
     }
 
     public Lotteries(final List<Lotto> lottos, final LottoMachine lottoMachine,
         final int ticketCount) {
+        this();
         addLottoByManual(lottos);
         addLottoByTicket(lottoMachine, ticketCount);
     }
